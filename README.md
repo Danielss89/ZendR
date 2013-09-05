@@ -1,4 +1,5 @@
 ZendR
+<<<<<<< HEAD
 ================
 
 A module for Zend2 designed to link PHP and R to generate detailed and complexe data reports, and much more.
