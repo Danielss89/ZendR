@@ -53,6 +53,10 @@ class IndexController extends AbstractActionController implements EntityManagerA
         return new ViewModel();
     }
 
+	public function editAction(){
+		return new ViewModel();
+	}
+
     public function getEm()
     {
         return $this->em;
