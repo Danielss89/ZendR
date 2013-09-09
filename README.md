@@ -1,7 +1,7 @@
 ZendR
 ================
 
-A module for Zend2 designed to link PHP and R to generate detailed and complexe data reports, and much more.
+A module for Zend2 designed to link PHP and R to generate detailed and complexe data reports, and (eventually) much more, like machine learning algorithms.
 
 What's in this repo?
 -------------------
