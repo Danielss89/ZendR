@@ -1,79 +1,32 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * ZendR module demonstration app
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @link      https://github.com/jr-duboc/ZendR
+ * @copyright Copyright (c) 2013 Jean-Rémy Duboc
+ * @license   LGPL
  */
 
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Debug;
 use Application\Initializer\EntityManagerAware;
 use Application\Initializer\ElasticsearchAware;
 use Application\Entity\User;
+use ZendR;
 
 
-class IndexController extends AbstractActionController implements EntityManagerAware, ElasticsearchAware
+class IndexController extends AbstractActionController
 {
-    private $em;
-    private $es;
-
     public function indexAction()
     {
-        /*
-         * Example: Use a custom finder
-         * $result = $this->em->getRepository('Application\Entity\User')->myCustomFinder();
-         */
-
-        /* Example: Add new user to Elasticsearch and search for it
-         * $type = $this->es->getIndex('user')->getType('user');
-         * $user = new User();
-         * $user->setId(1);
-         * $user->setUsername('testuser');
-         * $user->setEmail('testuser@example.com');
-         * $user->setPassword('test123');
-
-         * $doc = new \Elastica\Document(
-         *     $user->getId(),
-         *     array(
-         *         'id' => $user->getId(),
-         *         'username' => $user->getUsername(),
-         *         'email' => $user->getEmail()
-         *     )
-         * );
-         * $this->es->getIndex('user')->getType('user')->addDocument($doc);
-         * $this->es->getIndex('user')->refresh();
-         *
-         * $result = $this->es->getIndex('user')->getType('user')->search('*');
-         */
-
-        return new ViewModel();
+    	$zendRScript = new ZendR\Common\ZendRScriptSender();
+    	\Zend\Debug\Debug::dump("whaaaat");
     }
 
 	public function editAction(){
-		return new ViewModel();
+		return $view;
 	}
-
-    public function getEm()
-    {
-        return $this->em;
-    }
-
-    public function setEm($em)
-    {
-        $this->em = $em;
-    }
-
-    public function setEs($es)
-    {
-        $this->es = $es;
-    }
-
-    public function getEs()
-    {
-        return $this->es;
-    }
 }
